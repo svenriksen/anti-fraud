@@ -2,10 +2,12 @@ var xhr = new XMLHttpRequest();
 
 xhr.open("GET", "https://raw.githubusercontent.com/svenriksen/anti-fraud/main/scam_website.txt", true);
 
+var resp
+
 xhr.onreadystatechange = function() {
   if (xhr.readyState == 4) {
     // JSON.parse does not evaluate the attacker's scripts.
-    var resp = JSON.parse(xhr.responseText);
+    resp = xhr.responseText;
 
   }
 }
